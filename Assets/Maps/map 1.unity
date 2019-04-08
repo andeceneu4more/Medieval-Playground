@@ -1541,7 +1541,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jump: 2
+  rb: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  jump: 4
   animator: {fileID: 1703820046}
 --- !u!50 &1703820042
 Rigidbody2D:

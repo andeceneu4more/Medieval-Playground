@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public float speed;
-    Rigidbody2D rb;
-    SpriteRenderer spriteRenderer;
-    public float jump;
-    public Animator animator;
+    [SerializeField] private float speed;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float jump;
+    [SerializeField] private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -45,9 +43,17 @@ public class PlayerControler : MonoBehaviour
 
         rb.velocity = new Vector2(rb.velocity.x, speed * moveVertical);*/
 
+        /*
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
         }
+        */
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+        }
+
+
     }
 }
