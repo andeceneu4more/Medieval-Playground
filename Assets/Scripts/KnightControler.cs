@@ -9,6 +9,7 @@ public class KnightControler : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float jump;
     [SerializeField] private Animator animator;
+    private bool isGrounded;
 
     void Start()
     {
@@ -19,6 +20,22 @@ public class KnightControler : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 
     void FixedUpdate()
@@ -49,7 +66,7 @@ public class KnightControler : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jump);
         }
         */
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
         }
