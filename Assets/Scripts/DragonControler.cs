@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class DragonControler : MonoBehaviour
 {
@@ -16,30 +17,9 @@ public class DragonControler : MonoBehaviour
         isGrounded = true;
     }
 
-    void Update()
-    {
-
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
-
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("HorizontalDragon");
+        float moveHorizontal = Input.GetAxisRaw("HorizontalDragon") * speed;
         animator.SetFloat("Horizontal", moveHorizontal);
 
         if (moveHorizontal < 0)
@@ -54,22 +34,26 @@ public class DragonControler : MonoBehaviour
 
         rb.velocity = new Vector2(speed * moveHorizontal, rb.velocity.y);
 
-
-        /*float moveVertical = Input.GetAxis("VerticalDragon");
-
-        rb.velocity = new Vector2(rb.velocity.x, speed * moveVertical);*/
-
-        /*
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
-        }
-        */
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
+            isGrounded = false;
         }
-
-
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    /*void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }*/
 }
