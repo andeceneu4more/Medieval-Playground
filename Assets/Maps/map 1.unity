@@ -867,6 +867,7 @@ GameObject:
   - component: {fileID: 725082035}
   - component: {fileID: 725082036}
   - component: {fileID: 725082037}
+  - component: {fileID: 725082038}
   m_Layer: 0
   m_Name: knightDoor
   m_TagString: Untagged
@@ -882,8 +883,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725082034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.85, y: 3.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.15, y: 3.6, z: 0}
+  m_LocalScale: {x: 0.5551788, y: 0.6473284, z: 1}
   m_Children: []
   m_Father: {fileID: 999404281}
   m_RootOrder: 5
@@ -925,7 +926,7 @@ SpriteRenderer:
   m_SortingLayerID: 231180031
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: ae3918a914038694d852d0bb81f62473, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54d4ae8bcc814d6478f4ab6de7a01a6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -952,14 +953,31 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.49220562, y: -0.5756378}
-  - {x: -0.46458983, y: 0.272938}
-  - {x: -0.29348993, y: 0.4805007}
-  - {x: -0.07590723, y: 0.5545535}
-  - {x: 0.1311307, y: 0.55082846}
-  - {x: 0.30767536, y: 0.4603896}
-  - {x: 0.4665606, y: 0.30531168}
-  - {x: 0.47268295, y: -0.6049075}
+  - {x: -0.88227683, y: -0.92778873}
+  - {x: -0.8136022, y: 0.62508965}
+  - {x: -0.6425011, y: 0.8326524}
+  - {x: -0.42728797, y: 0.9893756}
+  - {x: -0.055377316, y: 1.0475644}
+  - {x: 0.2934232, y: 0.9939346}
+  - {x: 0.5827929, y: 0.8501568}
+  - {x: 0.84145766, y: 0.53081954}
+  - {x: 0.83610207, y: 0.32291904}
+  - {x: 0.8627543, y: -0.90423596}
+--- !u!114 &725082038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725082034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640da3cfa64cd5447a11779017869fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 725082036}
+  doorOpen: {fileID: 21300000, guid: da05f3b6795129544bac323776ebc0c0, type: 3}
+  doorClosed: {fileID: 21300000, guid: 54d4ae8bcc814d6478f4ab6de7a01a6b, type: 3}
 --- !u!1 &750747605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750747605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: -1.99, z: 0.25106877}
+  m_LocalPosition: {x: -0.16, y: 3.74, z: 0.25106877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1352,7 +1370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975381165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.64, y: 3.556, z: 0}
+  m_LocalPosition: {x: -4.65, y: 3.6, z: 0}
   m_LocalScale: {x: 0.55517876, y: 0.6473284, z: 1}
   m_Children: []
   m_Father: {fileID: 999404281}
@@ -1440,7 +1458,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 975381167}
   doorOpen: {fileID: 21300000, guid: 6805138613c62e44b99e264ac9d81121, type: 3}
   doorClosed: {fileID: 21300000, guid: 5aa3d43aae2269048b21d6bf3e149f36, type: 3}
-  isTouched: 0
 --- !u!68 &975381170
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1451,7 +1468,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

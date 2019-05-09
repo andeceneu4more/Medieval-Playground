@@ -5,7 +5,7 @@ public class DragonDoorControler : MonoBehaviour
     [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] public Sprite doorOpen;
     [SerializeField] public Sprite doorClosed;
-    public bool isTouched = false;
+    bool isTouched = false;
 
     void Start()
     {
@@ -15,17 +15,27 @@ public class DragonDoorControler : MonoBehaviour
 
     void Update()
     {
-        
+        if (!isTouched)
+        {
+            spriteRenderer.sprite = doorClosed;
+        }
+        else
+        {
+            spriteRenderer.sprite = doorOpen;
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Hit me");
-        if (collision.gameObject.name == "Dragon")
+        if (collider.gameObject.name == "Dragon")
         {
             isTouched = true;
             spriteRenderer.sprite = doorOpen;
         }
     }
 
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        isTouched = false;
+    }
 }
