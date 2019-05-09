@@ -866,6 +866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725082035}
   - component: {fileID: 725082036}
+  - component: {fileID: 725082037}
   m_Layer: 0
   m_Name: knightDoor
   m_TagString: Untagged
@@ -921,9 +922,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 231180031
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: ae3918a914038694d852d0bb81f62473, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -935,6 +936,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &725082037
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725082034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.49220562, y: -0.5756378}
+  - {x: -0.46458983, y: 0.272938}
+  - {x: -0.29348993, y: 0.4805007}
+  - {x: -0.07590723, y: 0.5545535}
+  - {x: 0.1311307, y: 0.55082846}
+  - {x: 0.30767536, y: 0.4603896}
+  - {x: 0.4665606, y: 0.30531168}
+  - {x: 0.47268295, y: -0.6049075}
 --- !u!1 &750747605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,8 +1144,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2013114497
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 96238e894efb33c40a84e9170640b311, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1209,7 +1234,7 @@ GameObject:
   - component: {fileID: 870186484}
   m_Layer: 0
   m_Name: button1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1337,7 @@ GameObject:
   - component: {fileID: 975381168}
   - component: {fileID: 975381169}
   - component: {fileID: 975381170}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: dragonDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975381165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.24, y: 3.556, z: 0}
+  m_LocalPosition: {x: -4.64, y: 3.556, z: 0}
   m_LocalScale: {x: 0.55517876, y: 0.6473284, z: 1}
   m_Children: []
   m_Father: {fileID: 999404281}
@@ -1367,9 +1392,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: -815405599
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5aa3d43aae2269048b21d6bf3e149f36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1416,27 +1441,30 @@ MonoBehaviour:
   doorOpen: {fileID: 21300000, guid: 6805138613c62e44b99e264ac9d81121, type: 3}
   doorClosed: {fileID: 21300000, guid: 5aa3d43aae2269048b21d6bf3e149f36, type: 3}
   isTouched: 0
---- !u!50 &975381170
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!68 &975381170
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975381165}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 3
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.8241817, y: -0.8450122}
+  - {x: -0.8346756, y: 0.56468135}
+  - {x: -0.5708814, y: 0.87601185}
+  - {x: -0.06409806, y: 1.0420283}
+  - {x: 0.3474474, y: 0.99424064}
+  - {x: 0.65838426, y: 0.8241418}
+  - {x: 0.8652615, y: 0.53517556}
+  - {x: 0.8593867, y: -0.8751909}
 --- !u!1 &994379124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2701,7 @@ GameObject:
   - component: {fileID: 1265520982}
   m_Layer: 0
   m_Name: button2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2944,8 +2972,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2013114497
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f69a974789e7bf340b2f6509eab6ff71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2966,7 +2994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703820040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 3.53, z: 0.37304688}
+  m_LocalPosition: {x: -1.14, y: 3.63, z: 0.37304688}
   m_LocalScale: {x: 0.966, y: 1.011, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

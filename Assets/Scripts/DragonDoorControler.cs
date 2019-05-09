@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DragonDoorControler : MonoBehaviour
 {
@@ -10,35 +9,23 @@ public class DragonDoorControler : MonoBehaviour
 
     void Start()
     {
-        
+        isTouched = false;
+        spriteRenderer.sprite = doorClosed;
     }
 
     void Update()
     {
-
-        if (isTouched)
-        {
-            spriteRenderer.sprite = doorOpen;
-        }
-
-        if (!isTouched)
-        {
-            spriteRenderer.sprite = doorClosed;
-        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Console.WriteLine ("intra");
+        Debug.Log("Hit me");
         if (collision.gameObject.name == "Dragon")
         {
             isTouched = true;
+            spriteRenderer.sprite = doorOpen;
         }
-        else
-        {
-            isTouched = false;
-        }
-
-        Update();
     }
+
 }
