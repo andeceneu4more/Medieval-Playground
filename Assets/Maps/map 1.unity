@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9dddd51f2b76e4481e62f3634a925c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveOn: 1
   speed: 1.5
   transformLeverOFF: {fileID: 74824060}
   transformLeverON: {fileID: 852418103}
@@ -673,7 +674,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -700,6 +701,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 429288374}
+  ec: {fileID: 429288375}
+  dragon: {fileID: 1703820041}
+  knight: {fileID: 750747606}
+  otherLever: {fileID: 1081708321}
+  platform: {fileID: 2062429453}
 --- !u!1 &481550866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750747605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 3.74, z: 0.25106877}
+  m_LocalPosition: {x: -1.8, y: 4.22, z: 0.25106877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2629,7 +2635,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2703,8 +2709,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6716fbec9357d1b4fa34b00b9483b44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visible: 0
   sr: {fileID: 1081708320}
+  ec: {fileID: 1081708319}
+  dragon: {fileID: 1703820041}
+  knight: {fileID: 750747606}
+  otherLever: {fileID: 429288376}
+  platform: {fileID: 2062429453}
 --- !u!1 &1265520980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +3021,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703820040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.14, y: 3.63, z: 0.37304688}
+  m_LocalPosition: {x: -1.91, y: 0.45, z: 0.37304688}
   m_LocalScale: {x: 0.966, y: 1.011, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3215,6 +3225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9dddd51f2b76e4481e62f3634a925c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveOn: 1
   speed: 1
   transformLeverOFF: {fileID: 2062429449}
   transformLeverON: {fileID: 481550867}

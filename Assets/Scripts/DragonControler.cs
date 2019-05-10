@@ -49,6 +49,13 @@ public class DragonControler : MonoBehaviour
         }
     }
 
+    public bool getFlipOrientation()
+    {
+        if (spriteRenderer.flipX == true)
+            return true;
+        return false;
+    }
+
     /*void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))

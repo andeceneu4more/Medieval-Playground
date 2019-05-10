@@ -17,11 +17,6 @@ public class KnightControler : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
@@ -71,6 +66,12 @@ public class KnightControler : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jump);
         }
 
+    }
 
+    public bool getFlipOrientation()
+    {
+        if (spriteRenderer.flipX == true)
+            return false;
+        return true;
     }
 }

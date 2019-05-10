@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    [SerializeField] private bool moveOn;
+
     private Vector3 posLeverOFF;
 
     private Vector3 posLeverON;
@@ -25,12 +27,24 @@ public class PlatformMovement : MonoBehaviour
         posLeverOFF = transformLeverOFF.localPosition;
         posLeverON = transformLeverON.localPosition;
         nextPos = posLeverON;
+        moveOn = true;
     }
 
     // Update is called once per frame
+
+    public void ChangeMovement()
+    {
+        if (moveOn == false)
+            moveOn = true;
+        else
+            if (moveOn == true)
+                moveOn = false;
+    }
+
     void Update()
     {
-        Move();
+        if (moveOn == true)
+            Move();
     }
 
     public void Move()
