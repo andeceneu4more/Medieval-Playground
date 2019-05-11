@@ -42,10 +42,10 @@ public class ButtonTurnOn : MonoBehaviour
         }
         else
             if (visible == true)
-        {
-            sr.enabled = true;
-            ec.enabled = true;
-        }
+            {
+                sr.enabled = true;
+                ec.enabled = true;
+            }
         if (visible == otherButton.getVisible())
         {
             otherButton.SetVisible();
@@ -53,23 +53,25 @@ public class ButtonTurnOn : MonoBehaviour
         }
     }
 
+    /*void OnCollisionEnter2D(Collision2D collider)
+    {
+        Debug.Log("intra pe on, visible = " + visible);
+        if (collider.gameObject.CompareTag("Player") && visible == false)
+        {
+            SetVisible();
+        }
+    }*/
+
     void OnCollisionExit2D(Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        Debug.Log("iese de pe on, " + visible);
+        if (collider.gameObject.CompareTag("Player") && visible == true)
         {
-            Debug.Log("iesire de pe on");
             SetVisible();
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collider)
-    {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("enter pe on");
-            //SetVisible();
-        }
-    }
+    
 
 
 }

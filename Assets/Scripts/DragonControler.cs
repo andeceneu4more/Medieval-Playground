@@ -24,12 +24,12 @@ public class DragonControler : MonoBehaviour
 
         if (moveHorizontal < 0)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (moveHorizontal > 0)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
         rb.velocity = new Vector2(speed * moveHorizontal, rb.velocity.y);
@@ -51,9 +51,9 @@ public class DragonControler : MonoBehaviour
 
     public bool getFlipOrientation()
     {
-        if (spriteRenderer.flipX == true)
-            return true;
-        return false;
+        if (transform.localScale.Equals(new Vector3(-1, 1, 1)))
+            return false;
+        return true;
     }
 
     /*void OnCollisionExit2D(Collision2D col)

@@ -40,12 +40,12 @@ public class KnightControler : MonoBehaviour
 
         if (moveHorizontal < 0)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (moveHorizontal > 0)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
         rb.velocity = new Vector2(speed * moveHorizontal, rb.velocity.y);
@@ -70,7 +70,7 @@ public class KnightControler : MonoBehaviour
 
     public bool getFlipOrientation()
     {
-        if (spriteRenderer.flipX == true)
+        if (transform.localScale.Equals(new Vector3(-1, 1, 1)))
             return false;
         return true;
     }

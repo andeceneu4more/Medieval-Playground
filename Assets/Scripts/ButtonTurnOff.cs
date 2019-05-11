@@ -55,19 +55,19 @@ public class ButtonTurnOff : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        Debug.Log("intra pe off, visible = " + visible);
+        if (collider.gameObject.CompareTag("Player") && visible == true)
         {
-            Debug.Log("enter pe off");
             SetVisible();
         }
     }
 
-    void OnCollisionExit2D(Collision2D collider)
+    /*void OnCollisionExit2D(Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        Debug.Log("iese de pe off, visible = " + visible);
+        if (collider.gameObject.CompareTag("Player") && visible == false)
         {
-            Debug.Log("iesire de pe off");
-            //SetVisible();
+            SetVisible();
         }
-    }
+    }*/
 }

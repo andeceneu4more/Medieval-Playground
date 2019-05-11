@@ -863,8 +863,8 @@ GameObject:
   m_Component:
   - component: {fileID: 665748295}
   - component: {fileID: 665748298}
-  - component: {fileID: 665748297}
   - component: {fileID: 665748296}
+  - component: {fileID: 665748297}
   m_Layer: 0
   m_Name: button2On
   m_TagString: Ground
@@ -919,10 +919,10 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.24000001, y: -0.12441455}
-  - {x: -0.37712806, y: -0.047368202}
+  - {x: -0.44940314, y: 0.0025996563}
   - {x: -0.19768302, y: 0.004718303}
   - {x: 0.19906029, y: 0.0052354727}
-  - {x: 0.345923, y: -0.03622591}
+  - {x: 0.5816992, y: -0.00548611}
   - {x: 0.26617977, y: -0.12742816}
 --- !u!212 &665748298
 SpriteRenderer:
@@ -1300,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750747605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.741, y: 2.255, z: 0.25106877}
+  m_LocalPosition: {x: -1.81, y: 4.16, z: 0.25106877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1452,12 +1452,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.23951565, y: -0.12247333}
-  - {x: -0.23910502, y: -0.04117995}
-  - {x: -0.20119509, y: 0.0008669495}
-  - {x: 0.19853699, y: -0.0000616908}
-  - {x: 0.2406807, y: -0.041808482}
-  - {x: 0.24068722, y: -0.12027858}
+  - {x: -0.19092552, y: -0.14036375}
+  - {x: -0.18771172, y: -0.056421157}
+  - {x: -0.14468265, y: -0.0014160075}
+  - {x: 0.14213392, y: 0.0015548863}
+  - {x: 0.17946288, y: -0.044581488}
+  - {x: 0.18699965, y: -0.13245204}
 --- !u!114 &870186485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2972,8 +2972,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1327269252}
   - component: {fileID: 1327269255}
-  - component: {fileID: 1327269254}
   - component: {fileID: 1327269253}
+  - component: {fileID: 1327269254}
   m_Layer: 0
   m_Name: button1On
   m_TagString: Ground
@@ -3027,11 +3027,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.23591134, y: -0.041908816}
-  - {x: -0.19694619, y: 0.0026562808}
-  - {x: 0.19683695, y: 0.0024185576}
-  - {x: 0.23672903, y: -0.043953158}
-  - {x: 0.23018718, y: -0.037820138}
+  - {x: -0.24000001, y: -0.12441455}
+  - {x: -0.44940314, y: 0.0025996563}
+  - {x: -0.19768302, y: 0.004718303}
+  - {x: 0.19906029, y: 0.0052354727}
+  - {x: 0.5816992, y: -0.00548611}
+  - {x: 0.26617977, y: -0.12742816}
 --- !u!212 &1327269255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3283,8 +3284,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703820040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 1.81, z: 0.37304688}
-  m_LocalScale: {x: 0.966, y: 1.011, z: 1}
+  m_LocalPosition: {x: -1.12, y: 1.93, z: 0.37304688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
