@@ -214,6 +214,24 @@ Tilemap:
   m_GameObject: {fileID: 74824059}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 3, y: 2, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 4, y: 2, z: 0}
+    second:
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: 5, y: 2, z: 0}
     second:
       m_TileIndex: 1
@@ -225,17 +243,21 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 2118f8d1353b14449bec18750d391d9f, type: 2}
+    m_Data: {fileID: 11400000, guid: 8fb3ad6fdc111e5428e9440ee579cf36, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: d8de40fe722a2f145a1be80a13d84aa0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: ae84a360cf0f7b94aa7dea4fb2ca4c6b, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 21300290, guid: 540229b1cb65c4d48a0e5e829a4cfd6a, type: 3}
+    m_Data: {fileID: 21300312, guid: 540229b1cb65c4d48a0e5e829a4cfd6a, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300314, guid: 540229b1cb65c4d48a0e5e829a4cfd6a, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300310, guid: 540229b1cb65c4d48a0e5e829a4cfd6a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -254,7 +276,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -664,7 +686,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 429288372}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 707b651920bae2041bb46e477dd9ac93, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -721,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481550866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.799994, y: -2.26, z: -0.2089844}
+  m_LocalPosition: {x: 1.799994, y: -1.8, z: -0.2089844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182390148}
@@ -900,8 +922,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 665748298}
   ec: {fileID: 665748297}
-  otherButton: {fileID: 1265520982}
+  buttonTurnOff: {fileID: 1265520982}
   platform: {fileID: 74824064}
+  otherButtonTurnOff: {fileID: 870186485}
 --- !u!68 &665748297
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1148,7 +1171,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 707b651920bae2041bb46e477dd9ac93, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1349,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852418102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.799994, y: -3, z: -0.2089844}
+  m_LocalPosition: {x: 1.799994, y: -2, z: -0.2089844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182390148}
@@ -1472,7 +1495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 870186483}
   ec: {fileID: 870186484}
-  otherButton: {fileID: 1327269253}
+  buttonTurnOn: {fileID: 1327269253}
   platform: {fileID: 74824064}
 --- !u!1 &975381165
 GameObject:
@@ -2762,7 +2785,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1081708317}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 707b651920bae2041bb46e477dd9ac93, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2890,7 +2913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 1265520983}
   ec: {fileID: 1265520984}
-  otherButton: {fileID: 665748296}
+  buttonTurnOn: {fileID: 665748296}
   platform: {fileID: 74824064}
 --- !u!212 &1265520983
 SpriteRenderer:
@@ -3009,8 +3032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 1327269255}
   ec: {fileID: 1327269254}
-  otherButton: {fileID: 870186485}
+  buttonTurnOff: {fileID: 870186485}
   platform: {fileID: 74824064}
+  otherButtonTurnOff: {fileID: 1265520982}
 --- !u!68 &1327269254
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3131,11 +3155,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 707b651920bae2041bb46e477dd9ac93, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

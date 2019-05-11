@@ -9,8 +9,9 @@ public class ButtonTurnOn : MonoBehaviour
     //private bool leftLever = false;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private EdgeCollider2D ec;
-    [SerializeField] private ButtonTurnOff otherButton;
+    [SerializeField] private ButtonTurnOff buttonTurnOff;
     [SerializeField] PlatformMovement platform;
+    [SerializeField] private ButtonTurnOff otherButtonTurnOff;
 
     // Start is called before the first frame update
     void Start()
@@ -46,10 +47,11 @@ public class ButtonTurnOn : MonoBehaviour
                 sr.enabled = true;
                 ec.enabled = true;
             }
-        if (visible == otherButton.getVisible())
+        if (visible == buttonTurnOff.getVisible())
         {
-            otherButton.SetVisible();
-            platform.ChangeMovementDown();
+            buttonTurnOff.SetVisible();
+            if (otherButtonTurnOff.getVisible() == true)
+                platform.ChangeMovementDown();
         }
     }
 
