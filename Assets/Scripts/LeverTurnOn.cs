@@ -49,7 +49,7 @@ public class LeverTurnOn : MonoBehaviour
         if (visible == otherLever.getVisible())
         {
             otherLever.SetVisible();
-            platform.ChangeMovement();
+            platform.ChangeMovementDown();
         }
     }
 

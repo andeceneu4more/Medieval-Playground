@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    [SerializeField] private bool moveOn;
+    //[SerializeField] private bool moveOn;
+    private bool moveUp;
+    private bool moveDown;
 
     private Vector3 posLeverOFF;
 
@@ -27,37 +29,57 @@ public class PlatformMovement : MonoBehaviour
         posLeverOFF = transformLeverOFF.localPosition;
         posLeverON = transformLeverON.localPosition;
         nextPos = posLeverON;
-        moveOn = true;
+        moveDown = false;
+        moveUp = false;
     }
 
     // Update is called once per frame
 
-    public void ChangeMovement()
+    public void ChangeMovementDown()
     {
-        if (moveOn == false)
-            moveOn = true;
+        if (moveDown == false)
+        {
+            moveDown = true;
+            moveUp = false;
+        }
         else
-            if (moveOn == true)
-                moveOn = false;
+        {
+            moveDown = false;
+        }
+    }
+
+    public void ChangeMovementUp()
+    {
+        if (moveUp == false)
+        {
+            moveUp = true;
+            moveDown = false;
+        }
+        else
+        {
+            moveUp = false;
+        }
     }
 
     void Update()
     {
-        if (moveOn == true)
-            Move();
-    }
-
-    public void Move()
-    {
-        transformLeverOFF.localPosition = Vector3.MoveTowards(transformLeverOFF.localPosition, nextPos, speed * Time.deltaTime);
-        if (Vector3.Distance(transformLeverOFF.localPosition, nextPos) <= 0.1)
+        if (moveUp == true)
         {
-            ChangeDestination();
+            MoveUp();
+        }
+        if (moveDown == true)
+        {
+            MoveDown();
         }
     }
 
-    private void ChangeDestination()
+    public void MoveUp()
     {
-        nextPos = nextPos != posLeverOFF ? posLeverOFF : posLeverON;
+        transformLeverOFF.localPosition = Vector3.MoveTowards(transformLeverOFF.localPosition, posLeverON, speed * Time.deltaTime);
+    }
+
+    public void MoveDown()
+    {
+        transformLeverOFF.localPosition = Vector3.MoveTowards(transformLeverOFF.localPosition, posLeverOFF, speed * Time.deltaTime);
     }
 }
