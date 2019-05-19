@@ -55,15 +55,6 @@ public class ButtonTurnOn : MonoBehaviour
         }
     }
 
-    /*void OnCollisionEnter2D(Collision2D collider)
-    {
-        Debug.Log("intra pe on, visible = " + visible);
-        if (collider.gameObject.CompareTag("Player") && visible == false)
-        {
-            SetVisible();
-        }
-    }*/
-
     void OnCollisionExit2D(Collision2D collider)
     {
         Debug.Log("iese de pe on, " + visible);
