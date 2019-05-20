@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeverTurnOffLvl2 : MonoBehaviour
 {
     private bool visible = true;
-    private bool leftLever = false;
+    private bool leftLever = true;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private EdgeCollider2D ec;
     [SerializeField] private DragonControler dragon;
@@ -42,10 +42,10 @@ public class LeverTurnOffLvl2 : MonoBehaviour
         }
         else
             if (visible == true)
-        {
-            sr.enabled = true;
-            ec.enabled = true;
-        }
+            {
+                sr.enabled = true;
+                ec.enabled = true;
+            }
         if (visible == otherLever.getVisible())
         {
             otherLever.SetVisible();
