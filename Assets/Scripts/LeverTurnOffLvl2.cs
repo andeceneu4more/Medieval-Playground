@@ -62,7 +62,7 @@ public class LeverTurnOffLvl2 : MonoBehaviour
         }
         if (collider.gameObject.name == "Knight")
         {
-            if (knight.getFlipOrientation() != leftLever)
+            if (knight.getFlipOrientation() == leftLever)
                 SetVisible();
         }
     }
