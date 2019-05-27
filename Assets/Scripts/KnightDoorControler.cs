@@ -7,6 +7,11 @@ public class KnightDoorControler : MonoBehaviour
     [SerializeField] public Sprite doorClosed;
     bool isTouched = false;
 
+    public bool isTouchedCheck()
+    {
+        return isTouched;
+    }
+
     void Start()
     {
         isTouched = false;

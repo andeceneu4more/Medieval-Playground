@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Maps/Menu.unity
+    guid: 95816a75190df7a4a90dbb12976ffc03
+  - enabled: 1
+    path: Assets/Maps/map 1.unity
+    guid: 8c8d9b7f9b61dad458680c0a7d8355c4
+  - enabled: 1
+    path: Assets/Maps/map 2.unity
+    guid: 43a21e6bd1595ed4fb2d450c7ffe647c
+  - enabled: 1
+    path: Assets/Maps/map 3.unity
+    guid: 391fea56ea80762459a59b54b57bfd30
+  - enabled: 1
+    path: Assets/Maps/map 4.unity
+    guid: d2b83fc6fd992f549abab99e17958273
   m_configObjects: {}
