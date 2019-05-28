@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SaveLoad
 {
+    public static bool loading = false;
+
     public static void SaveSystem(KnightControler knight, DragonControler dragon, TimerControler text)
     {
         BinaryFormatter formatter = new BinaryFormatter();

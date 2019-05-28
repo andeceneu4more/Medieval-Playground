@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public object Hashtable { get; private set; }
 
     public void PlayGame ()
     {
@@ -23,8 +22,8 @@ public class MainMenu : MonoBehaviour
         PlayersData data = SaveLoad.LoadSystem();
         if (data != null)
         {
-            var arguments:Hashtable = {"data" : data};
-            SceneManager.LoadScene(data.sceneIndex, arguments);
+            SaveLoad.loading = true;
+            SceneManager.LoadScene(data.sceneIndex);
         }
     }
 }
