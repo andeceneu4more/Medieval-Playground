@@ -3,10 +3,10 @@ PlayerPath?
 D:/UnityProjects/Medieval-Playground/Builds/Windows/x86_64/Medieval.exe
 SceneListBegin?
 Assets/Maps/Menu.unity
-Assets/Maps/map 1.unity
 Assets/Maps/map 2.unity
 Assets/Maps/map 3.unity
 Assets/Maps/map 4.unity
+Assets/Maps/map 1.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown

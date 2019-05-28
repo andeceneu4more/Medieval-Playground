@@ -1889,7 +1889,7 @@ MonoBehaviour:
   speed: 3.5
   rb: {fileID: 750747607}
   spriteRenderer: {fileID: 750747609}
-  jump: 4
+  jump: 5
   animator: {fileID: 750747611}
 --- !u!50 &750747607
 Rigidbody2D:
@@ -4958,7 +4958,7 @@ MonoBehaviour:
   speed: 1.75
   rb: {fileID: 1703820042}
   spriteRenderer: {fileID: 1703820044}
-  jump: 4
+  jump: 5
   animator: {fileID: 1703820046}
 --- !u!50 &1703820042
 Rigidbody2D:

@@ -9,7 +9,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseButtonUI;
 
-    public void Resume ()
+    public DragonControler dragon;
+    public KnightControler knight;
+    public TimerControler timer;
+
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         pauseButtonUI.SetActive(true);
@@ -18,7 +22,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
     
-    public void Pause ()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         pauseButtonUI.SetActive(false);
@@ -33,15 +37,20 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadMenu ()
+    public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
-    public void Retry ()
+    public void Retry()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Save()
+    {
+        SaveLoad.SaveSystem(knight, dragon, timer);
     }
 }
