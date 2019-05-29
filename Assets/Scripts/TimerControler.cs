@@ -9,9 +9,15 @@ public class TimerControler : MonoBehaviour
     private float startTime;
 
     // Start is called before the first frame update
-    void Start()
+
+    public void SetStartTime(float newStart)
     {
-        startTime = Time.time;
+        startTime = newStart;
+    }
+
+    public float GetStartTime()
+    {
+        return startTime;
     }
 
     // Update is called once per frame

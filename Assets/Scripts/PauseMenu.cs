@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
 
@@ -19,7 +18,6 @@ public class PauseMenu : MonoBehaviour
         pauseButtonUI.SetActive(true);
         //jocul reia de unde s-a pus pauza
         Time.timeScale = 1f;
-        GameIsPaused = false;
     }
     
     public void Pause()
@@ -28,7 +26,6 @@ public class PauseMenu : MonoBehaviour
         pauseButtonUI.SetActive(false);
         //pun pauza jocului
         Time.timeScale = 0f;
-        GameIsPaused = true;
     }
 
     public void QuitGame()
@@ -39,7 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         SceneManager.LoadScene("Menu");
     }
 

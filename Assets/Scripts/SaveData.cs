@@ -7,14 +7,18 @@ public class SaveLoad
 {
     public static bool loading = false;
 
-    public static void SaveSystem(KnightControler knight, DragonControler dragon, TimerControler text)
+    /// <summary>
+    /// 
+    /// </summary>
+
+    public static void SaveSystem(KnightControler knight, DragonControler dragon, TimerControler timerControler)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/savefile.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayersData data = new PlayersData(knight, dragon, text);
+        PlayersData data = new PlayersData(knight, dragon, timerControler);
         formatter.Serialize(stream, data);
         stream.Close();
     }

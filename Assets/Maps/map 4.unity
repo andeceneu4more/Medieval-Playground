@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knight: {fileID: 1967788548}
   dragon: {fileID: 2054816590}
-  text: {fileID: 527168466}
+  timerControler: {fileID: 527168466}
 --- !u!1 &274602317
 GameObject:
   m_ObjectHideFlags: 0

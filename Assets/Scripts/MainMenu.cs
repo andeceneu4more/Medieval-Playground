@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame ()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -19,6 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
+        Time.timeScale = 1f;
         PlayersData data = SaveLoad.LoadSystem();
         if (data != null)
         {
