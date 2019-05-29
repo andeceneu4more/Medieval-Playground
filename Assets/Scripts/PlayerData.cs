@@ -10,7 +10,7 @@ public class PlayersData
     public string timerText;
     public int sceneIndex;
 
-    public PlayersData(KnightControler knight, DragonControler dragon, TimerControler text)
+    public PlayersData(KnightControler knight, DragonControler dragon, TimerControler timerControler)
     {
         positionKnight = new float[3];
         positionKnight[0] = knight.transform.localPosition.x;
@@ -32,7 +32,7 @@ public class PlayersData
         scaleDragon[1] = dragon.transform.localScale.y;
         scaleDragon[2] = dragon.transform.localScale.z;
 
-        timerText = text.timerText.text;
+        timerText = timerControler.timerText.text;
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 }
