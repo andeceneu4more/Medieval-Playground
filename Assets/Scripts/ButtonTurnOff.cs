@@ -6,24 +6,31 @@ public class ButtonTurnOff : MonoBehaviour
 {
 
     private bool visible = true;
-    //private bool leftLever = false;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private EdgeCollider2D ec;
     [SerializeField] private ButtonTurnOn buttonTurnOn;
     [SerializeField] PlatformMovement platform;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// By default, sprite and collider are active
+    /// </summary>
     void Start()
     {
         sr.enabled = true;
         ec.enabled = true;
     }
 
-    public bool getVisible()
+    /// <summary>
+    /// Get visibility of button
+    /// </summary>
+    public bool GetVisible()
     {
         return visible;
     }
 
+    /// <summary>
+    /// Switch the button state
+    /// </summary>
     public void SetVisible()
     {
         if (visible == false)
@@ -33,8 +40,12 @@ public class ButtonTurnOff : MonoBehaviour
         OnTurned();
     }
 
+    /// <summary>
+    /// Apply the event of leaving the button
+    /// </summary>
     void OnTurned()
     {
+        // Turn off to opposite state
         if (visible == false)
         {
             sr.enabled = false;
@@ -46,28 +57,21 @@ public class ButtonTurnOff : MonoBehaviour
             sr.enabled = true;
             ec.enabled = true;
         }
-        if (visible == buttonTurnOn.getVisible())
+        if (visible == buttonTurnOn.GetVisible())
         {
+            // Turn on to opposite state
             buttonTurnOn.SetVisible();
+
+            // Move platform
             platform.ChangeMovementUp();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        Debug.Log("intra pe off, visible = " + visible);
         if (collider.gameObject.CompareTag("Player") && visible == true)
         {
             SetVisible();
         }
     }
-
-    /*void OnCollisionExit2D(Collision2D collider)
-    {
-        Debug.Log("iese de pe off, visible = " + visible);
-        if (collider.gameObject.CompareTag("Player") && visible == false)
-        {
-            SetVisible();
-        }
-    }*/
 }

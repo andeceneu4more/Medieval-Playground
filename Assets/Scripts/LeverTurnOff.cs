@@ -13,17 +13,26 @@ public class LeverTurnOff : MonoBehaviour
     [SerializeField] private LeverTurnOn otherLever;
     [SerializeField] PlatformMovement platform;
 
+    /// <summary>
+    /// By default, sprite and collider are active
+    /// </summary>
     void Start()
     {
         sr.enabled = true;
         ec.enabled = true;
     }
 
-    public bool getVisible()
+    /// <summary>
+    /// Get visibility of lever
+    /// </summary>
+    public bool GetVisible()
     {
         return visible;
     }
 
+    /// <summary>
+    /// Switch the lever state
+    /// </summary>
     public void SetVisible()
     {
         if (visible == false)
@@ -33,8 +42,12 @@ public class LeverTurnOff : MonoBehaviour
         OnTurned();
     }
 
+    /// <summary>
+    /// Apply the event of touching the lever
+    /// </summary>
     void OnTurned()
     {
+        // Turn off to opposite state
         if (visible == false)
         {
             sr.enabled = false;
@@ -46,9 +59,12 @@ public class LeverTurnOff : MonoBehaviour
                 sr.enabled = true;
                 ec.enabled = true;
             }
-        if (visible == otherLever.getVisible())
+        if (visible == otherLever.GetVisible())
         {
+            // Turn on to opposite state
             otherLever.SetVisible();
+
+            // Move platform
             platform.ChangeMovementUp();
         }
     }

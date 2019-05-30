@@ -6,25 +6,32 @@ public class ButtonTurnOn : MonoBehaviour
 {
 
     private bool visible = false;
-    //private bool leftLever = false;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private EdgeCollider2D ec;
     [SerializeField] private ButtonTurnOff buttonTurnOff;
     [SerializeField] PlatformMovement platform;
     [SerializeField] private ButtonTurnOff otherButtonTurnOff;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// By default, sprite and collider are inactive
+    /// </summary>
     void Start()
     {
         sr.enabled = false;
         ec.enabled = false;
     }
 
-    public bool getVisible()
+    /// <summary>
+    /// Get visibility of button
+    /// </summary>
+    public bool GetVisible()
     {
         return visible;
     }
 
+    /// <summary>
+    /// Switch the button state
+    /// </summary>
     public void SetVisible()
     {
         if (visible == false)
@@ -34,8 +41,12 @@ public class ButtonTurnOn : MonoBehaviour
         OnTurned();
     }
 
+    /// <summary>
+    /// Apply the event of touching the button
+    /// </summary>
     void OnTurned()
     {
+        // Turn on to opposite state
         if (visible == false)
         {
             sr.enabled = false;
@@ -47,10 +58,13 @@ public class ButtonTurnOn : MonoBehaviour
                 sr.enabled = true;
                 ec.enabled = true;
             }
-        if (visible == buttonTurnOff.getVisible())
+        if (visible == buttonTurnOff.GetVisible())
         {
+            // Turn off to opposite state
             buttonTurnOff.SetVisible();
-            if (otherButtonTurnOff.getVisible() == true)
+
+            // Move platform to the proper position
+            if (otherButtonTurnOff.GetVisible() == true)
                 platform.ChangeMovementDown();
         }
     }

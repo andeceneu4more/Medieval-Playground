@@ -9,6 +9,9 @@ public class LevelChanger : MonoBehaviour
 
     private int levelToLoad;
 
+    /// <summary>
+    /// Players pass to the next level when both doors are opened
+    /// </summary>
     void Update()
     {
         if (DragonDoorControler.isTouchedCheck() && KnightDoorControler.isTouchedCheck())
@@ -17,13 +20,18 @@ public class LevelChanger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Activate the animation for entering the next level
+    /// </summary>
     public void FadeToLevel (int levelIndex)
     {
         levelToLoad = levelIndex;
-        Debug.Log(levelToLoad);
         animator.SetTrigger("FadeOut");
     }
 
+    /// <summary>
+    /// Called after the fade out animation
+    /// </summary>
     public void OnFadeComplete ()
     {
         SceneManager.LoadScene(levelToLoad);

@@ -10,6 +10,12 @@ public class PlayersData
     public float timer;
     public int sceneIndex;
 
+    /// <summary>
+    /// Constructor with 3 parameters
+    /// </summary>
+    /// <param name="knight"> stores the knight position and scale </param>
+    /// <param name="dragon"> stores the dragon position and scale </param>
+    /// <param name="timerControler"> stores the elapsed time </param>
     public PlayersData(KnightControler knight, DragonControler dragon, TimerControler timerControler)
     {
         positionKnight = new float[3];

@@ -8,9 +8,9 @@ public class SaveLoad
     public static bool loading = false;
 
     /// <summary>
-    /// 
+    /// static function that performs the saving process, from current 
+    /// it builds a PlayersData object and serializes it in a persistent data path
     /// </summary>
-
     public static void SaveSystem(KnightControler knight, DragonControler dragon, TimerControler timerControler)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -23,6 +23,10 @@ public class SaveLoad
         stream.Close();
     }
 
+    /// <summary>
+    /// static function that performs the loading process
+    /// it deserializes the data from the specific path and returns a PlayersData object
+    /// </summary>
     public static PlayersData LoadSystem()
     {
         string path = Application.persistentDataPath + "/savefile.fun";

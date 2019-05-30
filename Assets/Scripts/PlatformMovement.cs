@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    //[SerializeField] private bool moveOn;
     private bool moveUp;
+
     private bool moveDown;
 
     private Vector3 posLeverOFF;
@@ -23,7 +23,9 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField]
     private Transform transformLeverON;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initially platform stands
+    /// </summary>
     void Start()
     {
         posLeverOFF = transformLeverOFF.localPosition;
@@ -33,8 +35,9 @@ public class PlatformMovement : MonoBehaviour
         moveUp = false;
     }
 
-    // Update is called once per frame
-
+    /// <summary>
+    /// Change direction of platform down
+    /// </summary>
     public void ChangeMovementDown()
     {
         if (moveDown == false)
@@ -48,6 +51,9 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change direction of platform up
+    /// </summary>
     public void ChangeMovementUp()
     {
         if (moveUp == false)
@@ -61,6 +67,9 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Check direction every frame
+    /// </summary>
     void Update()
     {
         if (moveUp == true)
@@ -73,11 +82,17 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Move platform from current position to upper bound
+    /// </summary>
     public void MoveUp()
     {
         transformLeverOFF.localPosition = Vector3.MoveTowards(transformLeverOFF.localPosition, posLeverON, speed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Move platform from current position to lower bound
+    /// </summary>
     public void MoveDown()
     {
         transformLeverOFF.localPosition = Vector3.MoveTowards(transformLeverOFF.localPosition, posLeverOFF, speed * Time.deltaTime);

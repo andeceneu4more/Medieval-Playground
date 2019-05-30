@@ -7,6 +7,10 @@ public class ConfigureLoad : MonoBehaviour
     public KnightControler knight;
     public DragonControler dragon;
     public TimerControler timerControler;
+
+    /// <summary>
+    /// When the scene is load, the characters are put in the latest configuration and the timer start from the latest save 
+    /// </summary>
     void Awake()
     {
         if (SaveLoad.loading)

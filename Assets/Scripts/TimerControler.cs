@@ -8,19 +8,25 @@ public class TimerControler : MonoBehaviour
     public Text timerText;
     private float startTime;
 
-    // Start is called before the first frame update
-
+    /// <summary>
+    /// Set timer to start from the begging of the session
+    /// </summary>
     public void SetStartTime(float newStart)
     {
         startTime = newStart;
     }
 
+    /// <summary>
+    /// Get the begging of session
+    /// </summary>
     public float GetStartTime()
     {
         return startTime;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Display the timer in minutes and seconds
+    /// </summary>
     void Update()
     {
         float time = Time.time - startTime;
