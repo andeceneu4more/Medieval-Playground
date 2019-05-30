@@ -10,6 +10,9 @@ public class DragonControler : MonoBehaviour
     [SerializeField] private Animator animator;
     private bool isGrounded;
 
+    /// <summary>
+    /// Initially player is grounded
+    /// </summary>
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +37,7 @@ public class DragonControler : MonoBehaviour
 
         rb.velocity = new Vector2(speed * moveHorizontal, rb.velocity.y);
 
+        // Player can perform one single jump before landing
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
@@ -49,18 +53,21 @@ public class DragonControler : MonoBehaviour
         }
     }
 
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    /// <summary>
+    /// Check if player is moving towards left or right
+    /// </summary>
     public bool getFlipOrientation()
     {
         if (transform.localScale.Equals(new Vector3(-1, 1, 1)))
             return false;
         return true;
     }
-
-    /*void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }*/
 }

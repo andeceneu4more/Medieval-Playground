@@ -11,26 +11,13 @@ public class KnightControler : MonoBehaviour
     [SerializeField] private Animator animator;
     private bool isGrounded;
 
+    /// <summary>
+    /// Initially player is grounded
+    /// </summary>
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
     }
 
     void FixedUpdate()
@@ -50,17 +37,7 @@ public class KnightControler : MonoBehaviour
 
         rb.velocity = new Vector2(speed * moveHorizontal, rb.velocity.y);
 
-
-        /*float moveVertical = Input.GetAxis("VerticalDragon");
-
-        rb.velocity = new Vector2(rb.velocity.x, speed * moveVertical);*/
-
-        /*
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
-        }
-        */
+        // Player can perform one single jump before landing
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
@@ -68,6 +45,25 @@ public class KnightControler : MonoBehaviour
 
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    /// <summary>
+    /// Check if player is moving towards left or right
+    /// </summary>
     public bool getFlipOrientation()
     {
         if (transform.localScale.Equals(new Vector3(-1, 1, 1)))
